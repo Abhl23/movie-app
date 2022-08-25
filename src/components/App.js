@@ -40,9 +40,9 @@ class App extends React.Component {
   };
 
   render() {
-    const {movies}=this.props.store.getState(); // state = {movies: {}, search: {}}
+    const { movies } = this.props.store.getState(); // state = {movies: {}, search: {}}
 
-    const { list, favourites, showFavourites } = movies; 
+    const { list, favourites, showFavourites } = movies;
 
     const displayMovies = showFavourites ? favourites : list;
 
@@ -50,7 +50,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <Navbar />
+        <Navbar dispatch={this.props.store.dispatch} />
         <div className="main">
           <div className="tabs">
             <div
@@ -77,7 +77,11 @@ class App extends React.Component {
               />
             ))}
           </div>
-          {displayMovies.length === 0 ? <div className="no-movies">No movies added yet!</div> : ''}
+          {displayMovies.length === 0 ? (
+            <div className="no-movies">No movies added yet!</div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     );
