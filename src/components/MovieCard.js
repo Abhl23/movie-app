@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import { addToFavourites, removeFromFavourites } from "../actions";
 
@@ -45,4 +46,6 @@ class MovieCard extends React.Component {
   }
 }
 
-export default MovieCard;
+const ConnectedMovieCardComponent=connect()(MovieCard);
+
+export default ConnectedMovieCardComponent;

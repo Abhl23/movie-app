@@ -51,7 +51,7 @@ export function handleMovieSearch(movie) {
       .then((movie) => {
         console.log("movie", movie);
 
-        // dispatch an action
+        // dispatch an action to save search results in store
         dispatch(addMovieSearchResult(movie));
       });
   };
